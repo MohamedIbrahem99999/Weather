@@ -1,0 +1,64 @@
+<div class="home-page">
+  <header class="home-header">
+    <app-search-bar (citySelected)="onCitySelected($event)" (useLocation)="useCurrentLocation()"></app-search-bar>
+    <div class="header-actions">
+      @if (current()) {
+        <button
+          type="button"
+          class="save-btn"
+          (click)="toggleSave()"
+          [class.saved]="isSaved()"
+          [attr.aria-label]="'saved.title' | translate"
+        >
+          {{ isSaved() ? '★' : '☆' }}
+        </button>
+      }
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </header>
+
+  <main class="home-main">
+    @if (loading()) {
+      <app-loading></app-loading>
+    } @else if (errorKey()) {
+      <app-error-message [messageKey]="errorKey()!" (retry)="retry()"></app-error-message>
+    } @else if (current()) {
+      <app-current-weather [data]="current()!"></app-current-weather>
+
+      <section class="forecast-card glass-card">
+        <div class="tabs" role="tablist">
+          <button
+            type="button"
+            role="tab"
+            class="tab-btn"
+            [class.active]="tab() === 'hourly'"
+            (click)="setTab('hourly')"
+          >
+            {{ 'forecast.hourly' | translate }}
+          </button>
+          <button
+            type="button"
+            role="tab"
+            class="tab-btn"
+            [class.active]="tab() === 'weekly'"
+            (click)="setTab('weekly')"
+          >
+            {{ 'forecast.weekly' | translate }}
+          </button>
+        </div>
+
+        @if (tab() === 'hourly') {
+          <app-hourly-forecast [items]="hourly()" [timezoneOffset]="current()!.timezone"></app-hourly-forecast>
+        } @else {
+          <app-weekly-forecast [items]="daily()"></app-weekly-forecast>
+        }
+      </section>
+
+      <section class="details-card glass-card">
+        <app-details-grid [current]="current()!" [uvIndex]="uvIndex()" [aqi]="aqi()"></app-details-grid>
+      </section>
+    }
+  </main>
+
+  <app-bottom-nav (locate)="useCurrentLocation()"></app-bottom-nav>
+</div>

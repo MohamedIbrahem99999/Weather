@@ -1,0 +1,8 @@
+<div class="detail-card">
+  <p class="dc-label"><span class="dc-icon" aria-hidden="true">{{ icon }}</span>{{ label }}</p>
+  <p class="dc-value">{{ value }}</p>
+  @if (hint) {
+    <p class="dc-hint">{{ hint }}</p>
+  }
+  <ng-content></ng-content>
+</div>

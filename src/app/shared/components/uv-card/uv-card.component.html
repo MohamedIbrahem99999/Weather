@@ -1,0 +1,15 @@
+<div class="uv-card">
+  <p class="uv-label"><span aria-hidden="true">☀️</span>{{ 'details.uvIndex' | translate }}</p>
+
+  @if (uv !== null) {
+    <p class="uv-value">{{ uv }}</p>
+    <p class="uv-level">{{ levelKey() | translate }}</p>
+    <div class="uv-bar">
+      <div class="uv-bar-fill" [style.width.%]="percent()"></div>
+      <div class="uv-marker" [style.left.%]="percent()"></div>
+    </div>
+  } @else {
+    <p class="uv-value uv-na">—</p>
+    <p class="uv-level uv-na-hint">N/A</p>
+  }
+</div>

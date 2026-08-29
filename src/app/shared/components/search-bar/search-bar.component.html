@@ -1,0 +1,38 @@
+<div class="search-wrap">
+  <div class="input-row">
+    <span class="search-icon">🔍</span>
+    <input
+      type="text"
+      class="search-input"
+      [placeholder]="'search.placeholder' | translate"
+      [(ngModel)]="query"
+      (ngModelChange)="onInput($event)"
+      (focus)="results().length && isOpen.set(true)"
+      (blur)="onBlur()"
+    />
+    <button
+      type="button"
+      class="locate-btn"
+      (click)="onUseLocation()"
+      [attr.aria-label]="'search.useLocation' | translate"
+      [title]="'search.useLocation' | translate"
+    >
+      📍
+    </button>
+  </div>
+
+  @if (isOpen()) {
+    <div class="results glass-card">
+      @if (results().length) {
+        @for (city of results(); track city.lat + '_' + city.lon) {
+          <button type="button" class="result-item" (click)="select(city)">
+            <span class="result-name">{{ city.name }}</span>
+            <span class="result-meta">{{ city.state ? city.state + ', ' : '' }}{{ city.country }}</span>
+          </button>
+        }
+      } @else {
+        <div class="no-results">{{ 'search.noResults' | translate }}</div>
+      }
+    </div>
+  }
+</div>

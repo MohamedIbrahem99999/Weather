@@ -1,0 +1,60 @@
+.hero {
+  text-align: center;
+  padding: 0.5rem 1rem 0;
+}
+
+.city {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  color: var(--text-primary);
+}
+
+.temp-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.temp {
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.condition-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
+}
+
+.condition {
+  margin: 0.3rem 0 0.2rem;
+  font-size: 1.05rem;
+  color: var(--text-tertiary);
+  text-transform: capitalize;
+}
+
+.min-max {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.dot {
+  margin: 0 0.35rem;
+  opacity: 0.5;
+}
+
+.house-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.house-img {
+  width: min(58%, 230px);
+  filter: drop-shadow(0 25px 30px rgba(10, 5, 30, 0.35));
+}

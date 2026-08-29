@@ -1,0 +1,15 @@
+<div class="weekly-scroll scroll-x">
+  @for (item of items; track item.date) {
+    <div class="day-pill">
+      <span class="day-label">{{ item.dayLabel }}</span>
+      <span class="day-emoji">{{ emoji(item.icon) }}</span>
+      @if (item.pop > 0.15) {
+        <span class="day-pop">{{ (item.pop * 100) | number: '1.0-0' }}%</span>
+      }
+      <span class="day-temps">
+        <span class="max">{{ item.tempMax }}°</span>
+        <span class="min">{{ item.tempMin }}°</span>
+      </span>
+    </div>
+  }
+</div>

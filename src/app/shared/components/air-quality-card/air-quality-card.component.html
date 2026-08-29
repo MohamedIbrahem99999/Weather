@@ -1,0 +1,11 @@
+<div class="aqi-card">
+  <p class="aqi-label"><span aria-hidden="true">🌬️</span>{{ 'details.airQuality' | translate }}</p>
+  @if (aqi !== null) {
+    <p class="aqi-value">{{ levelKey() | translate }}</p>
+    <div class="aqi-bar">
+      <div class="aqi-bar-fill" [style.width.%]="percent()"></div>
+    </div>
+  } @else {
+    <p class="aqi-value aqi-na">N/A</p>
+  }
+</div>

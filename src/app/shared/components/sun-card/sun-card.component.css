@@ -1,0 +1,59 @@
+.sun-card {
+  background: linear-gradient(160deg, var(--card-grad-start), var(--card-grad-end));
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  padding: 1rem 1.05rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sun-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sun-value {
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sun-arc {
+  width: 100%;
+  height: 44px;
+}
+
+.arc-path {
+  fill: none;
+  stroke: var(--accent-2);
+  stroke-width: 2;
+  opacity: 0.8;
+}
+
+.horizon {
+  stroke: var(--surface-border);
+  stroke-width: 1;
+}
+
+.sun-marker {
+  fill: #ffe9a8;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px rgba(255, 233, 168, 0.8));
+}
+
+.sun-sunset {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,23 @@
+<div class="wind-card">
+  <p class="wind-label"><span aria-hidden="true">💨</span>{{ 'details.wind' | translate }}</p>
+
+  <div class="compass">
+    <svg viewBox="0 0 120 120" class="compass-svg">
+      <circle cx="60" cy="60" r="52" class="ring" />
+      <text x="60" y="14" class="tick tick-n" text-anchor="middle">N</text>
+      <text x="106" y="64" class="tick" text-anchor="middle">E</text>
+      <text x="60" y="112" class="tick" text-anchor="middle">S</text>
+      <text x="14" y="64" class="tick" text-anchor="middle">W</text>
+
+      <g [attr.transform]="'rotate(' + deg + ' 60 60)'">
+        <line x1="60" y1="60" x2="60" y2="18" class="needle" />
+        <polygon points="60,10 55,22 65,22" class="needle-head" />
+      </g>
+    </svg>
+
+    <div class="compass-center">
+      <span class="speed">{{ speed }}</span>
+      <span class="unit">{{ 'units.kmh' | translate }}</span>
+    </div>
+  </div>
+</div>

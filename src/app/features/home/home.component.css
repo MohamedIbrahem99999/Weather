@@ -1,0 +1,83 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1rem 0.4rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.save-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.save-btn.saved {
+  color: #ffd166;
+  border-color: #ffd166;
+}
+
+.home-main {
+  flex: 1;
+  padding: 0.5rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.forecast-card,
+.details-card {
+  padding: 1.1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.4rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0 0 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab-btn.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent-2);
+}
+
+/* Wider layouts (tablet/desktop) get breathing room */
+@media (min-width: 640px) {
+  .home-page {
+    max-width: 560px;
+    padding-bottom: 1rem;
+  }
+}

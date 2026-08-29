@@ -1,0 +1,14 @@
+.details-grid {
+  padding: 0 0.1rem;
+}
+
+.details-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.7rem;
+  color: var(--text-primary);
+}
+
+.grid-full {
+  display: block;
+}

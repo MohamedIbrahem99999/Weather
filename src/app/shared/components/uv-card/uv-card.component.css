@@ -1,0 +1,69 @@
+.uv-card {
+  background: linear-gradient(160deg, var(--card-grad-start), var(--card-grad-end));
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  padding: 1rem 1.05rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.uv-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.uv-value {
+  margin: 0.1rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.uv-level {
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.uv-bar {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: visible;
+}
+
+.uv-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--uv-gradient);
+}
+
+.uv-marker {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--accent);
+  transform: translate(-50%, -50%);
+}
+
+.uv-na {
+  opacity: 0.5;
+}
+
+.uv-na-hint {
+  color: var(--text-quaternary);
+}

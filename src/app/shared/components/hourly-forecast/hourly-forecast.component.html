@@ -1,0 +1,14 @@
+<div class="hourly-scroll scroll-x">
+  @for (item of items; track item.dt; let i = $index) {
+    <div class="hour-pill" [class.active]="i === 0">
+      <span class="hour-label">
+        {{ i === 0 ? ('forecast.now' | translate) : hourLabel(item.dt, i) }}
+      </span>
+      <span class="hour-emoji">{{ emoji(item.icon) }}</span>
+      @if (item.pop > 0.15) {
+        <span class="hour-pop">{{ (item.pop * 100) | number: '1.0-0' }}%</span>
+      }
+      <span class="hour-temp">{{ item.temp }}°</span>
+    </div>
+  }
+</div>

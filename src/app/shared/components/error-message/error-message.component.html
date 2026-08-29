@@ -1,0 +1,10 @@
+<div class="error-wrap">
+  <span class="error-icon" aria-hidden="true">⚠️</span>
+  <p class="error-title">{{ 'error.title' | translate }}</p>
+  <p class="error-desc">{{ messageKey | translate }}</p>
+  @if (showRetry) {
+    <button type="button" class="retry-btn" (click)="retry.emit()">
+      {{ 'error.retry' | translate }}
+    </button>
+  }
+</div>

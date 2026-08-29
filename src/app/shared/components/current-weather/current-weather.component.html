@@ -1,0 +1,17 @@
+<div class="hero">
+  <p class="city">{{ data.cityName }}, {{ data.country }}</p>
+  <div class="temp-row">
+    <span class="temp">{{ data.temp }}°</span>
+    <span class="condition-emoji" aria-hidden="true">{{ emoji }}</span>
+  </div>
+  <p class="condition">{{ data.description }}</p>
+  <p class="min-max">
+    <span class="high">H:{{ data.tempMax }}°</span>
+    <span class="dot">·</span>
+    <span class="low">L:{{ data.tempMin }}°</span>
+  </p>
+
+  <div class="house-wrap">
+    <img src="assets/img/house.png" alt="" class="house-img" />
+  </div>
+</div>

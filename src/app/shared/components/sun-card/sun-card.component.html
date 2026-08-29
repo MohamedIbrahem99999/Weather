@@ -1,0 +1,12 @@
+<div class="sun-card">
+  <p class="sun-label"><span aria-hidden="true">🌅</span>{{ 'details.sunrise' | translate }}</p>
+  <p class="sun-value">{{ sunriseLabel() }}</p>
+
+  <svg viewBox="0 0 120 60" class="sun-arc">
+    <path d="M10,55 Q60,-10 110,55" class="arc-path" />
+    <circle [attr.cx]="markerPoint().x" [attr.cy]="markerPoint().y" r="4.5" class="sun-marker" />
+    <line x1="6" y1="55" x2="114" y2="55" class="horizon" />
+  </svg>
+
+  <p class="sun-sunset">{{ 'details.sunset' | translate }}: {{ sunsetLabel() }}</p>
+</div>

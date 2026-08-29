@@ -1,0 +1,64 @@
+@if (current) {
+  <div class="details-grid">
+    <h2 class="details-title">{{ 'details.title' | translate }}</h2>
+
+    <app-air-quality-card [aqi]="aqi" class="grid-full"></app-air-quality-card>
+
+    <div class="row g-3 mt-1">
+      <div class="col-6">
+        <app-uv-card [uv]="uvIndex"></app-uv-card>
+      </div>
+      <div class="col-6">
+        <app-sun-card
+          [sunrise]="current.sunrise"
+          [sunset]="current.sunset"
+          [timezoneOffset]="current.timezone"
+        ></app-sun-card>
+      </div>
+
+      <div class="col-6">
+        <app-wind-compass [speed]="current.windSpeed" [deg]="current.windDeg"></app-wind-compass>
+      </div>
+      <div class="col-6">
+        <app-detail-card
+          icon="💧"
+          [label]="'details.rainfall' | translate"
+          [value]="(current.rain1h ?? 0) + ' mm'"
+          [hint]="'details.rainfallHint' | translate"
+        ></app-detail-card>
+      </div>
+
+      <div class="col-6">
+        <app-detail-card
+          icon="🌡️"
+          [label]="'details.feelsLike' | translate"
+          [value]="current.feelsLike + '°'"
+          [hint]="'details.feelsLikeHint' | translate"
+        ></app-detail-card>
+      </div>
+      <div class="col-6">
+        <app-detail-card
+          icon="💦"
+          [label]="'details.humidity' | translate"
+          [value]="current.humidity + '%'"
+          [hint]="humidityHint()"
+        ></app-detail-card>
+      </div>
+
+      <div class="col-6">
+        <app-detail-card
+          icon="👁️"
+          [label]="'details.visibility' | translate"
+          [value]="(current.visibility / 1000 | number: '1.0-1') + ' ' + ('units.km' | translate)"
+        ></app-detail-card>
+      </div>
+      <div class="col-6">
+        <app-detail-card
+          icon="⏱️"
+          [label]="'details.pressure' | translate"
+          [value]="current.pressure + ' ' + ('details.pressureUnit' | translate)"
+        ></app-detail-card>
+      </div>
+    </div>
+  </div>
+}

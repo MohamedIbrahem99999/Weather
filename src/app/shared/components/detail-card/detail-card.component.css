@@ -1,0 +1,41 @@
+.detail-card {
+  background: linear-gradient(160deg, var(--card-grad-start), var(--card-grad-end));
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  padding: 1rem 1.05rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.dc-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dc-icon {
+  font-size: 0.9rem;
+}
+
+.dc-value {
+  margin: 0.1rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dc-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  line-height: 1.35;
+}

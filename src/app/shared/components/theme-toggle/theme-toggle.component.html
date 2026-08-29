@@ -1,0 +1,19 @@
+<div class="toggle-group">
+  <button
+    type="button"
+    class="icon-btn"
+    (click)="toggleTheme()"
+    [attr.aria-label]="'theme.toggle' | translate"
+    [title]="'theme.toggle' | translate"
+  >
+    @if (theme.theme() === 'dark') {
+      <span>☀️</span>
+    } @else {
+      <span>🌙</span>
+    }
+  </button>
+
+  <button type="button" class="lang-btn" (click)="toggleLang()">
+    {{ 'lang.toggle' | translate }}
+  </button>
+</div>

@@ -1,0 +1,52 @@
+<div class="saved-page">
+  <header class="saved-header">
+    <button type="button" class="back-btn flip-rtl" (click)="router.navigateByUrl('/')" aria-label="Back">
+      ‹
+    </button>
+    <h1 class="title">{{ 'app.title' | translate }}</h1>
+    <app-theme-toggle></app-theme-toggle>
+  </header>
+
+  <div class="search-row">
+    <app-search-bar (citySelected)="onCitySelected($event)"></app-search-bar>
+  </div>
+
+  <main class="saved-list">
+    @if (loading()) {
+      <app-loading></app-loading>
+    } @else if (isEmpty()) {
+      <p class="empty">{{ 'saved.empty' | translate }}</p>
+    } @else {
+      @for (row of rows(); track row.city.id) {
+        <button type="button" class="city-card" (click)="openCity(row.city)">
+          <div class="city-info">
+            @if (row.weather) {
+              <span class="city-temp">{{ row.weather.temp }}°</span>
+              <span class="city-range">H:{{ row.weather.tempMax }}° L:{{ row.weather.tempMin }}°</span>
+            } @else {
+              <span class="city-temp">—</span>
+            }
+            <span class="city-name">{{ row.city.name }}, {{ row.city.country }}</span>
+          </div>
+
+          <div class="city-side">
+            @if (row.weather) {
+              <span class="city-emoji">{{ emoji(row.weather.icon) }}</span>
+              <span class="city-condition">{{ row.weather.condition }}</span>
+            }
+            <button
+              type="button"
+              class="remove-btn"
+              (click)="remove(row.city.id, $event)"
+              [attr.aria-label]="'saved.remove' | translate"
+            >
+              ✕
+            </button>
+          </div>
+        </button>
+      }
+    }
+  </main>
+
+  <app-bottom-nav></app-bottom-nav>
+</div>
